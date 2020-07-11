@@ -7,6 +7,7 @@ const mongoose = require('mongoose')
 require('dotenv').config()
 // bring routes 
 const blogRoutes = require('./routes/blog')
+const authRoutes = require('./routes/auth')
 // app 
 const app = express()
 
@@ -25,6 +26,7 @@ mongoose
     .then( () => console.log('DB connected '))
 //routes middleware
 app.use('/api' , blogRoutes)
+app.use('/api' , authRoutes)
 //routes
 // app.get('/api' , (req, res) => {
 //     res.json({time: Date().toString() })
