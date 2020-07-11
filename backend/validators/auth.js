@@ -8,7 +8,7 @@ exports.userSignupValidator = [
     check('email').not()
             .isEmail()
             .withMessage('Must be valid email address'),
-    check('password').not()
+    check('password')
             .isLength({min: 6})
             .withMessage('Password must be at least 6'),
 ]
